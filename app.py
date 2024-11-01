@@ -13,9 +13,9 @@ from dotenv import load_dotenv
 import pandas as pd
 from langchain_community.document_loaders.csv_loader import CSVLoader
 
+__import__('pysqlite3')
 import sys
-import pysqlite3 as sqlite3
-sys.modules["sqlite3"] = sqlite3
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 load_dotenv()
 os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
