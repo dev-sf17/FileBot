@@ -11,5 +11,4 @@ beautifulsoup4
 streamlit
 langchain-groq
 protobuf==3.20
-pysqlite3-binary
-sqlite3>=3.35.0
+pysqlite3-binary>=3.35.0
