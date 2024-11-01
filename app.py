@@ -13,8 +13,12 @@ from dotenv import load_dotenv
 import pandas as pd
 from langchain_community.document_loaders.csv_loader import CSVLoader
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 load_dotenv()
-os.environ['GROQ_API_KEY']=os.getenv["GROQ_API_KEY"]
+os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
 
 ## Set up streamlit
 st.set_page_config(page_title="LangChain: Your CSV and PDF Agent",page_icon="🦜")
