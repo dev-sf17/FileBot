@@ -6,7 +6,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_chroma import Chroma
+#from langchain_chroma import Chroma
+from langchain_community.vectorstores import FAISS
 import time
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
@@ -34,7 +35,8 @@ def vector_embedding(docs):
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=5000, chunk_overlap=200)
         st.session_state.text_splitter = text_splitter
         st.session_state.final_documents = st.session_state.text_splitter.split_documents(docs)
-        st.session_state.vectors = Chroma.from_documents(st.session_state.final_documents, st.session_state.embeddings)
+        #st.session_state.vectors = Chroma.from_documents(st.session_state.final_documents, st.session_state.embeddings)
+        st.session_state.vectors=FAISS.from_documents(st.session_state.final_documents,st.session_state.embeddings)
     return st.session_state.vectors.as_retriever()
 
 def pdf_processing(files):
