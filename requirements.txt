@@ -10,4 +10,4 @@ langchain-chroma
 beautifulsoup4
 streamlit
 langchain-groq
-
+protobuf==3.20
