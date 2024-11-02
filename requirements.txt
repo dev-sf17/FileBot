@@ -10,6 +10,4 @@ langchain-chroma
 beautifulsoup4
 streamlit
 langchain-groq
-protobuf==3.20
-pysqlite3-binary
-#faiss-cpu
+
