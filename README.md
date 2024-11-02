@@ -13,5 +13,7 @@ FileBot is a powerful AI chatbot designed to search and retrieve information fro
 ### Usage
 Users can upload their own CSV and PDF documents to the chatbot and perform customized searches on their data. The chatbot returns precise and relevant information based on user queries.
 
+To use the chatbot, visit the site at , https://filebot-a2emfc4epdvzs9jxx69xpj.streamlit.app/
+
 ### Limitations
 - **Embedding Model Performance:** While the HuggingFace `all-MiniLM-L6-v2` embedding model provides solid performance for many use cases, more sophisticated embedding models may yield even more accurate and contextually rich responses. Depending on the complexity of your data, experimenting with other embedding models could improve the quality of search results.
